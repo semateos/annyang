@@ -186,7 +186,11 @@
           for (var j = 0, l = commandsList.length; j < l; j++) {
             var result = commandsList[j].command.exec(commandText);
             if (result) {
-              var parameters = result.slice(1);
+              
+              //var parameters = result.slice(1);
+              //hack to get command name into params:
+              var parameters = result;
+
               if (debugState) {
                 root.console.log('command matched: %c'+commandsList[j].originalPhrase, debugStyle);
                 if (parameters.length) {
